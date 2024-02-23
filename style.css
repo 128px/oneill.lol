@@ -87,3 +87,14 @@ a {
 	color: red;
 	text-shadow: 0 0 5px red;
 }
+
+.contact {
+		text-align: center;
+	padding-top: 20px;
+	font-size: 36px;
+	display: block;
+	margin: 0 auto;
+	width: fit-content;
+	color: lime;
+	text-shadow: 0 0 5px lime;
+}
