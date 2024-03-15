@@ -98,3 +98,19 @@ a {
 	color: lime;
 	text-shadow: 0 0 5px lime;
 }
+
+.expanded {
+    width: 500px; /* or whatever size you desire */
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: white;
+}
+
+.expanded img {
+    width: 100%;
+    height: auto;
+}

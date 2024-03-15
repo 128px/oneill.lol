@@ -10,6 +10,21 @@
 			display: flex;
 			align-items: center;
 		}
+        .expanded {
+            width: 500px; /* or whatever size you desire */
+            height: auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            background-color: white;
+        }
+
+        .expanded img {
+            width: 100%;
+            height: auto;
+        }
 	</style>
 </head>
 <body>
@@ -19,11 +34,41 @@
         <h2>[1/5/24] A Swim in a Pond in the Rain (★★★★★)</h2>
         <p>"'That's our way!' he said to himself, experiencing a strange and solemn tenderness." This quote from *Master and Man* (one of the stories included and analyzed in this book) made me put the book down and take a long, scalding hot shower. This character, up until this point in the story, held little regard for everyone around him; he was selfish and held all his desires above all else. It was this quote where it is brought to the reader that he is experiencing a sudden and somewhat shocking change in his disposition. This abrupt shift in the dynamics of the character, from someone somewhat unlikable to someone capable of tenderness, resonated deeply with me. I grew up with only male role models, my older brother and my father. Being a man who grew up in the south during the 80s, my dad is the typical invulnerable, emotionless shell on the outside (not that that is all he is; it is more of a defense mechanism to avoid pain, in my opinion), and that rubbed off on both me and my brother. Now, both my brother and I have broken our own toxic masculinity "shells" (him more than me, I think). I don't cry a lot, but when a story written in 1895 hits so close to home, it's impossible not to feel its weight. Now, away from how I related to the book (or rather, the stories in the book), I want to talk about how this book changed me. I finished this book on January 5, 2024, but I wish I read it so much earlier. *A Swim in a Pond in the Rain* has changed the way I read, and I think about it just about every time I open a book. This is a book that analyzes eight short stories written by Russian authors in the 19th century, with commentary from Syracuse University professor George Saunders. I hate to sound dramatic, but this book has fundamentally altered the way I read fiction, and it has only been a few weeks since I finished it. I'm no stranger to Russian literature, but I feel like I am now so much more well-equipped to understand and enjoy the old Russian books that I already love. The way that Saunders dissects each story not only shows the reader that there is so much more to these seemingly simple stories, but also forces the reader to come to this realization on their own terms, has fundamentally changed me. I believe I will never read the same for the rest of my life. This is the first book I have read that explicitly prompts the reader to stop and critically think about what you just read, not only about the plot or characters, but also about the deeper themes, symbolism, and techniques employed by the authors. Saunders' commentary is insightful, thought-provoking, and often humorous, making it not only an educational experience but an enjoyable one as well. The emphasis on active reading and engaging with the stories on a deeper level helped me question and analyze the layers of a story that I otherwise wouldn't have picked up on. You may be able to tell based on the amount of annotation shown in the pictures that I could not get enough of this book. Five out of five stars.</p>
         <br>
-        <div class="image-container">
-            <img src="image1.jpg" style="width: 45%; float: left;">
-            <img src="image2.jpg" style="width: 45%; float: right;">
+        <div class="gif-container">
+            <img src="image1.jpg" style="width: 200px; float: left;" onclick="expandImage(this)" class="expandable-image">
+            <img src="image2.jpg" style="width: 200px; float: right;" onclick="expandImage(this)" class="expandable-image">
             <div style="clear: both;"></div>
         </div>
     </div>
+    <script>
+        function expandImage(image) {
+            if (!image.classList.contains('expanded')) {
+                // Set the width to a larger value when expanded
+                image.classList.add('expanded');
+                image.originalWidth = image.style.width; // Store the original width
+                image.originalPosition = image.style.position; // Store the original position
+                image.originalTop = image.style.top; // Store the original top position
+                image.originalLeft = image.style.left; // Store the original left position
+    
+                image.style.width = '500px'; // Or whatever size you desire
+                // Position the image at the center of the screen
+                image.style.position = 'fixed';
+                image.style.top = '50%';
+                image.style.left = '50%';
+                image.style.transform = 'translate(-50%, -50%)';
+                image.style.zIndex = '999';
+                image.style.backgroundColor = 'white';
+            } else {
+                image.classList.remove('expanded');
+                image.style.width = image.originalWidth || ''; // Reset width to its original value
+                image.style.position = image.originalPosition || ''; // Reset position
+                image.style.top = image.originalTop || ''; // Reset top position
+                image.style.left = image.originalLeft || ''; // Reset left position
+                image.style.transform = ''; // Reset transform
+                image.style.zIndex = ''; // Reset z-index
+                image.style.backgroundColor = ''; // Reset background color
+            }
+        }
+    </script>    
 </body>
 </html>
